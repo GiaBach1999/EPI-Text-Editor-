@@ -229,7 +229,7 @@ void editorMoveCursor(int key) {
   if (E.cx > rowlen) {
     E.cx = rowlen;
   }
-
+}
   /*** row operations ***/
 
   int editorRowCxToRx(erow *row, int cx) {
@@ -280,6 +280,7 @@ void editorMoveCursor(int key) {
     E.row[at].chars[len] = '\0';
     E.row[at].rsize = 0;
     E.row[at].render = NULL;
+    editorUpdateRow(&E.row[at]);
 
     E.numrows++;
   }
